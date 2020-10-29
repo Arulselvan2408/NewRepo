@@ -7,6 +7,7 @@ namespace BasicEG
     {
         static void Main()
         {
+            /*Arul*/
             string Name, City;
                 int Age;
             Console.WriteLine("Enter your name");
