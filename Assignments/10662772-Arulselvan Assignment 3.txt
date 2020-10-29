@@ -1,0 +1,219 @@
+Question 1:  Create a class called Customer with Customerid, Name, Age, Phone,City. 
+Write a constructors with no arguments and another constructor with all information.  
+Write a method called DisplayCustomer().
+
+Answer:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{class Customer
+    {
+        int CustomerID, Age, PhNumber;
+        string Name, City;
+        internal Customer()
+        {
+
+        }
+        internal Customer(int CustomerID, string Name, int Age, int PhNumber, string City)
+        {
+            this.CustomerID = CustomerID;
+            this.Name = Name;
+            this.Age = Age;
+            this.PhNumber = PhNumber;
+            this.City = City;
+        }
+        internal void DisplayMethod()
+        {
+            Console.WriteLine("CustomerID:{0}\nName:{1}\nAge:{2}\nPhNumber:{3}\nCity:{4}\n", CustomerID, Name, Age,PhNumber,City);
+        }
+    }
+    class Question1
+    {
+        static void Main()
+        {
+            Customer cus = new Customer(101, "Arul", 23, 1234567890, "Trichy");
+            cus.DisplayMethod();
+            Console.Read();
+            
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Question 3:Create a Product class containing  pid ,pname,price of product and shopname as static .
+fetch multiple product details from user and display the same along with shopname. 
+
+Answer:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{class Product
+    {
+        int Pid, Price;
+        string Pname;
+      internal static string ShopName;
+        internal Product(int Pid, string Pname, int price)
+        {
+            this.Pid = Pid;
+            this.Pname = Pname;
+            this.Price = price;
+        }
+       
+      internal void Display()
+        {
+            Console.WriteLine("Pid: {0}\nPname: {1}\nPrice: {2}\nShopName: {3}", Pid, Pname, Price, ShopName);
+        }
+    }
+   
+       class Question3
+    {static void Main()
+        {
+            Console.WriteLine("enter the Shopname");
+            Product.Shopname = Console.ReadLine();
+            Console.WriteLine("Enter the size");
+            int Size = Convert.ToInt32(Console.ReadLine());
+            Product[] product = new Product[Size];
+            for (int i=0; i<Size; i++)
+            {
+                Console.WriteLine("Enter the Value of Pid,Pname, Price");
+                int Pid = Convert.ToInt32(Console.ReadLine());
+                string Pname = Console.ReadLine();
+                int price = Convert.ToInt32(Console.ReadLine());
+                product[i] = new Product(Pid, Pname, price);               
+                   
+            }
+            for (int i = 0; i < Size; i++)
+            {
+                product[i].Display();
+            }
+            Console.Read();
+
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Question 4:Create a class that has method to swap() 2 numbers and 2 strings (Method overloading)
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    class methodoverloading
+    {
+        internal void Swap(int a, int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine("After Swapping: a={0} and b={1}", a,b);
+        }
+        internal void Swap(string c, string d)
+        {
+            string temp = c;
+            c = d;
+            d = temp;
+            Console.WriteLine("After Swapping: c={0} and d={1}", c, d);
+        }
+    }
+
+   
+    class Question_4
+    {
+        static void Main()
+        {
+            methodoverloading obj = new methodoverloading();
+            Console.WriteLine("enter the value of a and b");
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b= Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter c and d");
+            string c = Console.ReadLine();
+            string d = Console.ReadLine();
+            obj.Swap(a, b);
+            obj.Swap(c, d);
+            Console.Read();
+
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Question2:Create a class called Saledetails which has data members like Salesno, Productno, Price, dateofsale, Qty, TotalAmount
+
+Create a method called Sales() that takes qty, Price details of the object and updates the TotalAmount as Qty *Price
+
+Pass the other information like SalesNo, Productno, Price,Qty and Date of sale through constructor
+
+call the show data method to display the values.
+
+Hint : Use This pointer
+
+Answer:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Class_objectEg
+{class SalesDetails
+    {
+        int Salesnum;
+        int ProductNum;
+        int Price;
+        DateTime Dateofsale;
+        int Quantity;
+        int Total;
+        internal int sales(int Quantity, int Price)
+        {
+            Total = Quantity * Price;
+            return Total;
+        }
+        internal SalesDetails(int Salesnum, int ProductNum, int Price, DateTime Dateofsale, int Quantity)
+        {
+            this.Salesnum = Salesnum;
+            this.ProductNum = ProductNum;
+            this.Price = Price;
+            this.Dateofsale = Dateofsale;
+            this.Quantity = Quantity;
+        }
+        internal void showdata()
+        {
+            Console.WriteLine("SalesNum: {0}\nProductNum:{1}\nprice:{2}\nDateofSale: {3}\nQuantity: {4}", Salesnum, ProductNum, Price, Dateofsale, Quantity);
+
+        }
+    }
+   
+
+       
+    class Arul
+    {
+        static void Main()
+        {
+            Console.WriteLine("Enter the Values of SaleNum, Productnum,Price, Dateofsale,Quantiy");
+            int SalesNum = Convert.ToInt32(Console.ReadLine());
+            int Productnum = Convert.ToInt32(Console.ReadLine());
+            int price= Convert.ToInt32(Console.ReadLine());
+            DateTime Dateofsale = Convert.ToDateTime(Console.ReadLine());
+            int Quantity= Convert.ToInt32(Console.ReadLine());
+
+            SalesDetails SD = new SalesDetails(SalesNum,Productnum,price,Dateofsale,Quantity);
+            SD.showdata();
+            Console.WriteLine("total Amount:{0}", SD.sales(Quantity,price));
+            Console.Read();
+        }
+      
+
+        
+    }
+}

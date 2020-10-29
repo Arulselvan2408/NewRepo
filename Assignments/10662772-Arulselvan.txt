@@ -1,0 +1,117 @@
+Question 3: Create an console application to multiple 3 numbers: num1=40,num2=90,num3=20;
+using System;
+
+
+namespace Loop_and_Conditional_Statements
+{
+    class Multiplication
+    {static void Main()
+        {
+            int num1 = 40, num2 = 90, num3 = 20;
+            Console.WriteLine("Answer is {0}", num1 * num2 * num3);
+            Console.Read();
+        }
+    }
+}
+
+----------------------------------------------------------------------------------------------------
+Question 4: Write an Console Application to get Student Details from user and print the Same
+
+Answer:-
+using System;
+
+
+namespace Loop_and_Conditional_Statements
+{
+    class StudentDetails
+    {
+        static void Main()
+        {
+            string StudentName, SchoolName;
+            int Age;
+            Console.WriteLine("Enter the StudentName");
+            StudentName = Console.ReadLine();
+            Console.WriteLine("Enter the SchoolName");
+            SchoolName = Console.ReadLine();
+            Console.WriteLine("Enter the Age");
+            Age = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Name= {0}", StudentName);
+            Console.WriteLine("School= {0}", SchoolName);
+            Console.WriteLine("Age {0}", Age);
+
+            Console.Read();
+
+        }
+        
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------
+
+Question 5:Create an Console Application to calculate area of square,area of rectangle using methods
+Answer:-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment_1
+{
+
+    class Area
+    {
+        void AreaofSquare(int Side)
+        {
+            Console.WriteLine("Area of square ={0}", Side * Side);
+        }
+        void AreaofRectangle(int Length, int Breadth)
+        {
+            Console.WriteLine("Areaof Rectangle={0}", Length * Breadth);
+        }
+        static void Main()
+        {
+
+            int Side, Length, Breadth;
+            Console.WriteLine("Enter the side of Square");
+            Side = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the length of the Rectangle");
+            Length = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the Breadth of the Rectangle");
+            Breadth = Convert.ToInt32(Console.ReadLine());
+
+            Area area = new Area();
+            area.AreaofSquare(Side);
+            area.AreaofRectangle(Length, Breadth);
+            Console.Read();
+
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+
+Question 6: check the given number is odd number or not
+namespace Loop_and_Conditional_Statements
+{
+    class OddorEven
+    {
+        static void Main()
+        {
+            int Number;
+            Console.WriteLine("Enter the number");
+            Number = Convert.ToInt32(Console.ReadLine());
+            if (Number % 2 == 0)
+            {
+                Console.WriteLine("Even Number");
+            }
+            else
+            {
+                Console.WriteLine("Odd Number");
+            }
+            Console.Read();
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------

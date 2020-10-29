@@ -1,0 +1,14 @@
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Assignments\Assignment-1\bin\Debug\Assignment-1.exe.config
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Assignments\Assignment-1\bin\Debug\Assignment-1.exe
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Assignments\Assignment-1\bin\Debug\Assignment-1.pdb
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Assignments\Assignment-1\obj\Debug\Assignment-1.csprojAssemblyReference.cache
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Assignments\Assignment-1\obj\Debug\Assignment-1.csproj.CoreCompileInputs.cache
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Assignments\Assignment-1\obj\Debug\Assignment-1.exe
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Assignments\Assignment-1\obj\Debug\Assignment-1.pdb
+C:\Users\SELVA\OneDrive\Desktop\Arul\C#\Assignments\Assignment-1\bin\Debug\Assignment-1.exe.config
+C:\Users\SELVA\OneDrive\Desktop\Arul\C#\Assignments\Assignment-1\bin\Debug\Assignment-1.exe
+C:\Users\SELVA\OneDrive\Desktop\Arul\C#\Assignments\Assignment-1\bin\Debug\Assignment-1.pdb
+C:\Users\SELVA\OneDrive\Desktop\Arul\C#\Assignments\Assignment-1\obj\Debug\Assignment-1.csprojAssemblyReference.cache
+C:\Users\SELVA\OneDrive\Desktop\Arul\C#\Assignments\Assignment-1\obj\Debug\Assignment-1.csproj.CoreCompileInputs.cache
+C:\Users\SELVA\OneDrive\Desktop\Arul\C#\Assignments\Assignment-1\obj\Debug\Assignment-1.exe
+C:\Users\SELVA\OneDrive\Desktop\Arul\C#\Assignments\Assignment-1\obj\Debug\Assignment-1.pdb

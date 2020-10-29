@@ -1,0 +1,135 @@
+Question1:Create an console application to book train tickets. Create a Passanger class with (Name, Age) 
+and write a function called TicketBooking(no_of_tickets) that takes no.of tickets to be booked. 
+If the no of tickets is > 2 per booking, raise an user defined exception, and print "cannot book more than 2 tickets". 
+Else Print "Ticket Booked Successfully". 
+Add a Test class to call TicketBooking method by accepting all required details.
+
+Answer:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment5
+{
+    class TicketsNumberException : Exception
+    {
+        public TicketsNumberException(string Ex) : base(Ex)
+        {
+
+        }
+    }
+    class Passanger
+    {
+        internal string Name;
+        int Age;
+        internal Passanger(string Name, int Age)
+        {
+            this.Name = Name;
+            this.Age = Age;
+        }
+        public void TicketBooking(int Numberoftickets)
+        {
+            try
+            {
+                if (Numberoftickets>2)
+                {
+                    throw new TicketsNumberException("cannot book more than 2 tickets");
+                }
+                else
+                {
+                    Console.WriteLine("Tickets Booked Sucessfully");
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+    class Testclass
+    {
+        static void Main()
+        {
+            Passanger passanger = new Passanger("Arul", 23);
+            Console.WriteLine("Enter the number of tickets to be booked");
+            int NumberofTickets = Convert.ToInt32(Console.ReadLine());
+            passanger.TicketBooking(NumberofTickets);
+            Console.Read();
+
+        }
+
+    }
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Question 2:Write a class called LoanProcess with Loan_No, Customer Name, LoanAmount, EMI_Amount, Account_Balance as its members. 
+Create a method calculate_EMI() for the LoanAmount , with the rate of interest as 13% for a total of 3 years and store it in the EMI_Amount. 
+The rest of the information to be passed through constructors. 
+Write another function CheckBalance() which checks if the Account_Balance is less than the EMI_AMount. 
+If yes then throw a custom exception. Display " Not Sufficient Balance to repay Loan" in the finally. Give explanatory comments.
+
+Answer:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment5
+{
+    class LoanProcess
+    {
+        int LoanNumber;
+        string CustomerName;
+        internal int LoanAmount;
+        float EMI_Amount;
+        internal int AccountBalance;
+        internal LoanProcess(int LoanNumber, string CustomerName, int LoanAmount, int AccountBalance)
+        {
+            this.LoanNumber = LoanNumber;
+            this.LoanAmount = LoanAmount;
+            this.CustomerName = CustomerName;
+            this.AccountBalance = AccountBalance;
+        }
+        internal float Calculate_EMI(int LoanAmount, float ROI, int time)
+        {
+            float r = (ROI / (12 * 100));
+            int t = time * 12;
+            EMI_Amount = (LoanAmount * r * (float)Math.Pow(1 + r, t)) / (float)(Math.Pow(1 + r, t) - 1);
+            return EMI_Amount;
+        }
+        public void CheckBalance(int AccountBalance, float EMI_Amount)
+        {
+            try
+            {
+                if (AccountBalance < EMI_Amount)
+                {
+                    throw new Exception("Not Sufficient Balance to Repay the Loan");
+                }
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Not Sufficient Balance to Repay the Loan");
+            }
+        }
+    }
+    class Question2
+    {
+        static void Main()
+        {
+            
+            LoanProcess loanProcess = new LoanProcess(421356,"Arulselvan",300000,8500);
+            float EMI = loanProcess.Calculate_EMI(loanProcess.LoanAmount,13,3);
+            loanProcess.CheckBalance(loanProcess.AccountBalance, EMI);
+            Console.Read();
+
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------

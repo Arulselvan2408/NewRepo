@@ -1,0 +1,7 @@
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Day 1\FirstAppplication\BasicEG\bin\Debug\BasicEG.exe.config
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Day 1\FirstAppplication\BasicEG\bin\Debug\BasicEG.exe
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Day 1\FirstAppplication\BasicEG\bin\Debug\BasicEG.pdb
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Day 1\FirstAppplication\BasicEG\obj\Debug\BasicEG.csprojAssemblyReference.cache
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Day 1\FirstAppplication\BasicEG\obj\Debug\BasicEG.csproj.CoreCompileInputs.cache
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Day 1\FirstAppplication\BasicEG\obj\Debug\BasicEG.exe
+C:\Users\ShrimhanNithiga\Desktop\Arul\C#\Day 1\FirstAppplication\BasicEG\obj\Debug\BasicEG.pdb

@@ -1,0 +1,210 @@
+Question 1:Create an Abstract class Student with  Name, StudentId, Grade as members and also an abstarct method Boolean Ispassed(grade) which 
+takes grade as an input and checks whether student passed the course or not. 
+  
+Create 2 Sub classes Undergraduate and Graduate that inherits all members of the student and overrides Ispassed() method  
+
+For the UnderGrad class, if the grade is above 70.0, then isPassed returns true, otherwise it returns false. For the Grad 
+class, if the grade is above 80.0, then isPassed returns true, otherwise returns false. 
+
+Answer:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment4
+{
+    abstract class Student
+    {
+        internal string Name= "Arul";
+        internal int StudentID= 1005;
+        internal int Grade;
+        public abstract Boolean IsPassed(int Grade);
+    }
+    class Undergraduate : Student
+    {
+        public override bool IsPassed(int Grade)
+        {
+            if (Grade > 70)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+    }
+    class Graduate : Student
+    {
+        public override bool IsPassed(int Grade)
+        {
+            if (Grade > 80)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        
+           
+    }
+    class Question1
+    {
+        static void Main()
+        {
+            Undergraduate undergraduate = new Undergraduate();
+            Console.WriteLine("Enter the Name and ID");
+            undergraduate.Name = Console.ReadLine();
+            undergraduate.StudentID = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the marks");
+            undergraduate.Grade = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Name: {0},ID: {1}, Marks: {2}, Result: {3}", undergraduate.Name, undergraduate.StudentID, undergraduate.Grade, undergraduate.IsPassed(undergraduate.Grade));
+            
+            Graduate graduate = new Graduate();
+            Console.WriteLine("Enter the Name and ID");
+            graduate.Name = Console.ReadLine();
+            graduate.StudentID = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the marks");
+            graduate.Grade = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Name: {0},ID: {1}, Marks: {2}, Result: {3}", graduate.Name, graduate.StudentID, graduate.Grade, graduate.IsPassed(graduate.Grade));
+            Console.Read();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question2: Create an Employee class with Empid int, Empname string, Salaryperhour  float. 
+Pass values to the members through Constructor. 
+Create a derived class called ParttimeEmployee with hoursofworking as a data member. 
+Instantiate the base class through the derived class constructor  
+Create a Method called Calculate Salary() based on hoursofworking 
+ 
+Answer:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment4
+{
+    class Employee
+    {
+        protected int Empid;
+        protected string Empname;
+        protected float Salaryperhour;
+        internal Employee(int Empid, string Empname, float Salaryperhour)
+        {
+            this.Empid = Empid;
+            this.Empname = Empname;
+            this.Salaryperhour = Salaryperhour;
+        }
+      
+    }
+    class ParttimeEmployee:Employee
+    {
+        int Hoursofworking;
+        internal ParttimeEmployee(int Empid, string Empname, float Salaryperhour, int Hoursofworking):base(Empid,Empname, Salaryperhour)
+        {
+            this.Hoursofworking = Hoursofworking;
+        }
+        internal float calculatesalary()
+        {
+            return Salaryperhour * Hoursofworking;
+        }
+       internal  void Display()
+        {
+            Console.WriteLine("Empid: {0}\nEmpname: {1}\nSalary per Hour: {2}\nTotalSalary: {3}", Empid, Empname, Salaryperhour, calculatesalary());
+        }
+    }
+    
+    class Question2
+    {
+        static void Main()
+        {
+            ParttimeEmployee parttimeEmployee = new ParttimeEmployee(101,"Arul",449.99f,9);
+            parttimeEmployee.Display();
+            Console.Read();
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question3:
+Create an Interface called ICar which contains the following methods break(),Engine().  
+
+Create a car company called Benz which implements ICar interface and it  also has the method called BenzFunctionality(),
+
+Toyota implements ICar interface and it also has the method called ToyotaFunctionality() 
+
+Answer:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment4
+{
+    interface Icar
+    {
+        string Brake();
+        string Engine();
+
+    }
+    class Benz : Icar
+    {
+        public string Brake()
+        {
+            return "BenzBrake";
+        }
+
+        public string Engine()
+        {
+            return "BenzEngine";
+        }
+        internal void BenzFunctionality()
+        {
+            Console.WriteLine("Brake: {0}\nEngine: {1}", Brake(), Engine());
+        }
+    }
+    class Toyoto : Icar
+    {
+        public string Brake()
+        {
+            return "ToyotoBrake";
+        }
+
+        public string Engine()
+        {
+            return "ToyotoEngine";
+        }
+        internal void ToyotoFunctionality()
+        {
+            Console.WriteLine("Brake: {0}\nEngine :{1}", Brake(), Engine());
+        }
+       
+
+    }
+    
+    class Question_3
+    {
+        static void Main()
+        {
+            Benz benz = new Benz();
+            benz.BenzFunctionality();
+            Toyoto toyoto = new Toyoto();
+            toyoto.ToyotoFunctionality();
+            Console.Read();
+        }
+
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

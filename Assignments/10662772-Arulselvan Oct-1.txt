@@ -1,0 +1,231 @@
+Question 1: 1. Print all the natural numbers in reverse order
+Answer:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Question1
+    {
+        static void Main()
+        {
+            Console.WriteLine("Enter the last Natural Number");
+            int n = Convert.ToInt32(Console.ReadLine());
+            for (int i=n; i>0; i--)
+            {
+                Console.WriteLine(i);
+            }
+            Console.Read();
+        }
+    }
+}
+
+Question2:Print all the alphabets from a -z using while
+Answer:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Question2
+    {
+        static void Main()
+        {
+            char[] alphabets = new char[26] {'a', 'b', 'c', 'd', 'e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+            int i = 0, j = 25;
+            while (i<= j)
+            {
+                Console.WriteLine(alphabets[i]);
+                i = i+1;
+            }
+            Console.Read();
+
+                
+        }
+    }
+}
+
+Question 3:To find sum of all odd numbers between 1 to n
+Answer:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Question3
+    {
+        static void Main()
+        {
+            Console.WriteLine("Enter the Value of N");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            
+            for (int i=2; i < n; i++)
+            {
+                if(i%2 != 0)
+                {
+                    sum = sum + i;
+                }
+            }
+            Console.WriteLine(sum);
+            Console.Read();
+
+        }
+    }
+}
+Question 4:
+Answer:Count number of digits in a given number eg:Input :789, Answer:3
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Question4
+    {
+        static void Main()
+        {
+            Console.WriteLine("Enter the number");
+            int Num = Convert.ToInt32(Console.ReadLine());
+            string Number = Convert.ToString(Num);
+            Console.WriteLine("Number of Digits:{0}", Number.Length);
+            Console.Read();
+                
+        }
+    }
+}
+Question 5:Program to reverse a given number eg:4563 output:3654
+Answer:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Question5
+    {
+       
+        static void Main()
+        {
+            Console.WriteLine("Enter the number");
+            int num = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Number with Reversed Digits:");
+            while (num != 0)
+            {
+                int rem = num % 10;
+                num = num / 10;
+                Console.Write(rem);
+            }
+            Console.Read();
+        }
+    }
+}
+
+Question6:Find the frequency of an given elements in an array eg:{2,3,5,2,3,2} Input: 2 output: frequency of 2 is 3
+Answer:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Question6
+    {
+        static void Main()
+        {
+            int[] Matrix = new int[10] { 1, 5, 3, 6, 2, 3, 9, 4, 3, 6 };
+            Console.WriteLine("Enter the Element");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int count = 0;
+            for (int i=0; i<Matrix.Length; i++)
+            {
+                if (n== Matrix[i])
+                {
+                    count = count + 1;
+                }  
+            }
+            Console.WriteLine("frequency={0}", count);
+            Console.Read();
+
+        }
+    }
+}
+
+Question 7: Write a c# program :method to fetch system date and display the same
+Answer:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Question7
+    {
+        static void Main()
+        {
+            DateTime CurrentDateTime = DateTime.Now;
+
+            Console.WriteLine("Current Date and Time:{0}",CurrentDateTime);
+            Console.Read();
+
+        }
+    }
+}
+
+Question 8:Write a c# program : method that gets course details containing cid,cname,feeamount from the admin and display the same
+Answer: 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Question8
+    {
+        void CourseDetails(int Cid, string Cname, int feeamount)
+        {
+            Console.WriteLine("Courseid ={0}\nCourse Name={1}\nFee Amount={2}", Cid, Cname, feeamount);
+        }
+        static void Main()
+        {
+            Console.WriteLine("Enter the CourseID");
+            int Courseid = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the Course Name");
+            string CourseName=Console.ReadLine();
+            Console.WriteLine("Enter the Fee Amount");
+            int feeamount = Convert.ToInt32(Console.ReadLine());
+            Question8 Q8 = new Question8();
+            Q8.CourseDetails(Courseid, CourseName, feeamount);
+            Console.Read();
+
+        }
+    }
+}
+
