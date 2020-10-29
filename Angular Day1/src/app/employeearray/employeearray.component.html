@@ -1,0 +1,60 @@
+<p>employeearray works!</p>
+<P>Structural Directive</P>
+<table class="table table-striped table-hover">
+   <thead>
+       <tr>
+           <th>Index</th>
+           <th>Name</th>
+           <th>Age</th>
+           <th>Department</th>
+       </tr>
+   </thead>
+   <tbody *ngFor="let emp of people let i=index">
+       <tr>
+           <td>{{i}}</td>
+           <td>{{emp.name}}</td>
+           <td>{{emp.age}}</td>
+           <td>{{emp.Dept}}</td>
+       </tr>
+   </tbody>
+</table>
+<hr>
+<h2>NG IF</h2>
+<h3>Display the Employee age>25</h3>
+<div *ngFor="let e of people">
+    <li *ngIf="e.age >25 && e.Dept==='Finance'">{{e.name}} {{e.age}}</li>
+    <li>{{e.Dept}}</li> <!--the if condition is not applied because tag closed-->
+</div>
+<br>
+<div class="det" *ngFor="let e of people">
+    <div *ngIf="e.age>25">
+    <li >{{e.name}} {{e.age}}</li>
+    <li>{{e.Dept}}</li>
+    </div>
+</div>
+<br/>
+<div *ngFor="let p of people">
+    <div *ngIf="p.age>22">
+        <li>{{p.name}} {{p.age}}</li>
+    </div>
+</div>
+<h3>Switch Case</h3>
+
+<div *ngFor="let p of people"[ngSwitch]="p.Dept">
+    <li *ngSwitchCase="'HR'" class="text-success">
+        {{p.name}} {{p.Dept}}
+    </li>
+    <li *ngSwitchCase="'ONG'" class="text-danger">
+        {{p.name}} {{p.Dept}}
+    </li>
+    <li *ngSwitchCase="'Finance'" class="text-warning">
+        {{p.name}} {{p.Dept}}
+    </li>
+
+</div>
+<h3>Attribute Directive ngClass, ngStyle</h3>
+<ul *ngFor="let peo of people">
+    <li [ngClass]="{'text-success':peo.Dept==='ONG','text-info':peo.Dept==='HR'}">
+        {{peo.name}} {{peo.Dept}}
+    </li>
+</ul>
